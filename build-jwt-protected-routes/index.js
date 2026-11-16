@@ -1,16 +1,11 @@
-import express from "express";
-import helmet from "helmet";
 
-const PORT = process.env.PORT;
-const app = express();
+const app = require("./server");
 
-app.use(helmet());
-app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.json({ message: "Auth API is running" });
-});
+const PORT = process.env.PORT || 8800;
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}...`);
+  console.log("----------------------------------");
+  console.log("JWT Authentication API");
+  console.log(`Server running at http://localhost:${PORT}`);
+  console.log("----------------------------------");
 });

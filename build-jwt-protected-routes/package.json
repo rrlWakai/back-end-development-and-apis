@@ -1,17 +1,15 @@
+
 {
-  "name": "auth-api",
+  "name": "build-jwt-protected-routes",
   "version": "1.0.0",
-  "description": "JWT Authentication API with social login and role-based authorization",
+  "description": "JWT Authentication and Protected Routes",
   "main": "index.js",
   "scripts": {
     "start": "node --env-file .env index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "BSD-3-Clause",
-  "type": "module",
   "dependencies": {
-    "express": "5.2.1",
-    "helmet": "8.2.0"
+    "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
   }
 }

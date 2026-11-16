@@ -3,11 +3,16 @@
   "version": "0.0.1",
   "description": "",
   "main": "server.js",
-  "scripts": {},
-  "dependencies": {
-    "express": "^5.1.0"
+  "scripts": {
+    "start": "node server.js"
   },
-  "keywords": ["node", "freecodecamp"],
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "keywords": [
+    "node",
+    "freecodecamp"
+  ],
   "license": "MIT",
   "type": "module"
 }
