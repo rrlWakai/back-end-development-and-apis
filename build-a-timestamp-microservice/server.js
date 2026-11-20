@@ -12,6 +12,37 @@ app.get("/", (_req, res) => {
 });
 
 // Do not change code above this line
+function processDate(dateInput) {
+  let date;
+
+  if (dateInput === undefined) {
+    date = new Date();
+  } else if (/^-?\d+$/.test(dateInput)) {
+    date = new Date(Number(dateInput));
+  } else {
+    date = new Date(dateInput);
+  }
+
+  if (isNaN(date.getTime())) {
+    return { error: "Invalid Date" };
+  }
+
+  return {
+    unix: date.getTime(),
+    utc: date.toUTCString()
+  };
+}
+
+// Route for current timestamp
+app.get("/api", (req, res) => {
+  res.json(processDate(undefined));
+});
+
+// Route for specified date
+app.get("/api/:date", (req, res) => {
+  res.json(processDate(req.params.date));
+});
+
 
 // Do not change code below this line
 
